@@ -43,8 +43,9 @@
 
 <p>　　前面文章讲过consul的单机以及集群的搭建，下面不在详细介绍相关参数了：     </p>
 
-<p>　　　　docker run -d -p 8500:8500  -p 53:53/udp --name=consul  gliderlabs/consul-server -bootstrap　-advertise 127.0.0.1
-　　　　</p>
+<p>　　　　docker run -d -p 8500:8500  -p 53:53/udp --name=consul  gliderlabs/consul-server -bootstrap　-advertise 127.0.0.1<br>
+　　　　
+　　　　注意:-advertise参数表示的是:是给集群中的其他节点展现的地址.      </p>
 
 <h1>
 <a id="二registartor的搭建---" class="anchor" href="#%E4%BA%8Cregistartor%E7%9A%84%E6%90%AD%E5%BB%BA---" aria-hidden="true"><span class="octicon octicon-link"></span></a>二．registartor的搭建   </h1>
@@ -57,7 +58,9 @@ consul://localhost:8500
 </code></pre>
 
 <p>　简单介绍下上面参数的含义：<br>
-　　　　第三行表示把docker的socket文件挂载到该docker容器下　第五行表示当检测到docket上有新的服务的时候　会把其注册到指定的consul</p>
+　　　　第三行表示把docker的socket文件挂载到该docker容器下　第五行表示当检测到docket上有新的服务的时候　会把其注册到指定的consul            </p>
+
+<p>注意:此时是需要把localhost换成你搭建consul的那台机器的真实ip(对外出口ip),由于其docker默认使用的 bridge网络模式.        </p>
 
 <h1>
 <a id="三consul_template与nginx的搭建---" class="anchor" href="#%E4%B8%89consul_template%E4%B8%8Enginx%E7%9A%84%E6%90%AD%E5%BB%BA---" aria-hidden="true"><span class="octicon octicon-link"></span></a>三．consul_template与nginx的搭建   </h1>
