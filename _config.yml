@@ -1,0 +1,8 @@
+title: Consul3
+description: consul+docker+registrator+consul_template+nginx
+google_analytics: consul+docker+registrator+consul_template+nginx
+show_downloads: true
+theme: jekyll-theme-dinky
+
+gems:
+  - jekyll-mentions
